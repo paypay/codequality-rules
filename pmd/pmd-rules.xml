@@ -1,48 +1,25 @@
 <?xml version="1.0"?>
 
-<ruleset name="All Java Rules"
+<ruleset name="PayPay Java PMD Rules"
          xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
-    <description>Every Java Rule in PMD</description>
 
-    <exclude-pattern>.*/ant/java/EncodingTestClass.java</exclude-pattern>
-    <exclude-pattern>.*/net/sourceforge/pmd/cpd/badandgood/BadFile.java</exclude-pattern>
-    <exclude-pattern>.*/net/sourceforge/pmd/lang/java/ast/jdkversiontests/assert_test5.java</exclude-pattern>
-    <exclude-pattern>.*/net/sourceforge/pmd/lang/java/ast/jdkversiontests/assert_test5_a.java</exclude-pattern>
-    <exclude-pattern>.*/net/sourceforge/pmd/lang/java/ast/jdkversiontests/assert_test7.java</exclude-pattern>
-    <exclude-pattern>.*/net/sourceforge/pmd/lang/java/ast/jdkversiontests/jdk14_enum.java</exclude-pattern>
-    <exclude-pattern>.*/net/sourceforge/pmd/lang/java/ast/jdkversiontests/jdk9_invalid_identifier.java</exclude-pattern>
-    <exclude-pattern>
-        .*/net/sourceforge/pmd/lang/java/ast/jdkversiontests/java10/LocalVariableTypeInference_varAsAnnotationName.java
-    </exclude-pattern>
-    <exclude-pattern>
-        .*/net/sourceforge/pmd/lang/java/ast/jdkversiontests/java10/LocalVariableTypeInference_varAsEnumName.java
-    </exclude-pattern>
-    <exclude-pattern>
-        .*/net/sourceforge/pmd/lang/java/ast/jdkversiontests/java10/LocalVariableTypeInference_varAsTypeIdentifier.java
-    </exclude-pattern>
+    <description>PayPay Java PMD Rules</description>
+
+    <!--
+        This include all built-in Java rule categories except for 'Documention'
+        See https://pmd.github.io/latest/pmd_rules_java.html
+    -->
+
     <rule ref="category/java/bestpractices.xml"/>
-    <rule ref="category/java/codestyle.xml"/>
-    <rule ref="category/java/codestyle.xml/LongVariable">
-        <properties>
-            <property name="minimum" value="60"/>
-        </properties>
+    <rule ref="category/java/codestyle.xml">
+        <exclude name="AtLeastOneConstructor"/>
+        <exclude name="LongVariable"/>
+        <exclude name="LocalVariableCouldBeFinal"/>
     </rule>
-    <rule ref="category/java/codestyle.xml/AtLeastOneConstructor">
-        <properties>
-            <property name="ignoredAnnotations"
-                      value="lombok.Data|lombok.Value|lombok.Builder|lombok.NoArgsConstructor|lombok.RequiredArgsConstructor|lombok.AllArgsConstructor"/>
-        </properties>
-    </rule>
-
-    <rule ref="category/java/design.xml"/>
-    <rule ref="category/java/documentation.xml"/>
-    <rule ref="category/java/documentation.xml/CommentSize">
-        <properties>
-            <!-- corresponding to checkstyle/editorconfig value -->
-            <property name="maxLineLength" value="140"/>
-        </properties>
+    <rule ref="category/java/design.xml">
+        <exclude name="LawOfDemeter"/>
     </rule>
     <rule ref="category/java/errorprone.xml"/>
     <rule ref="category/java/multithreading.xml"/>
