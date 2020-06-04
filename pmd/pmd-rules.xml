@@ -17,6 +17,7 @@
         <exclude name="AtLeastOneConstructor"/>
         <exclude name="LongVariable"/>
         <exclude name="LocalVariableCouldBeFinal"/>
+        <exclude name="MethodArgumentCouldBeFinal"/>
     </rule>
     <rule ref="category/java/design.xml">
         <exclude name="LawOfDemeter"/>
