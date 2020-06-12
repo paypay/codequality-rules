@@ -18,14 +18,14 @@
         <exclude name="LongVariable"/>
         <exclude name="LocalVariableCouldBeFinal"/>
         <exclude name="MethodArgumentCouldBeFinal"/>
-        <exclude name="CommentDefaultAccessModifierRule"/>
+        <exclude name="CommentDefaultAccessModifier"/>
         <exclude name="DefaultPackage"/>
     </rule>
     <rule ref="category/java/design.xml">
         <exclude name="LawOfDemeter"/>
     </rule>
     <rule ref="category/java/errorprone.xml">
-        <exclude name="BeanMembersShouldSerializeRule"/>
+        <exclude name="BeanMembersShouldSerialize"/>
     </rule>
     <rule ref="category/java/multithreading.xml"/>
     <rule ref="category/java/performance.xml"/>
